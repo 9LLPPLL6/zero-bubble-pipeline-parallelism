@@ -12,3 +12,6 @@ local/
 *.nsys-rep
 *.svg
 */**/.DS_Store
+workload
+debug.log
+Models

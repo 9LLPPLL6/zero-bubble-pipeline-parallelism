@@ -15,7 +15,7 @@ DATASET="${DATASET_DIR}/dataset/c4_text_document"
 TOKENIZER="${DATASET_DIR}/tokenizers/tokenizer.model"
 
 if [ ! -e "$DATASET"".idx" ]; then
-  wget https://huggingface.co/datasets/ufotalent/zero_bubble_sample_dataset/resolve/main/zb_sample_dataset.tar.gz
+  wget https://hf-mirror.com/datasets/ufotalent/zero_bubble_sample_dataset/resolve/main/zb_sample_dataset.tar.gz
   tar -xvf zb_sample_dataset.tar.gz -C /tmp
 fi
 
@@ -69,8 +69,9 @@ if [ -z "$TP_SIZE" ]; then
   TP_SIZE=2
 fi
 
+GQA=1
+
 options=" \
-  --tensor-model-parallel-size $TP_SIZE \
   --pipeline-model-parallel-size $PIPELINE_SIZE \
   --num-layers $LAYERS \
   --hidden-size $HIDDEN_SIZE \

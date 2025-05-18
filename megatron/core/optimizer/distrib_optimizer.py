@@ -422,7 +422,7 @@ class DistributedOptimizer(MixedPrecisionOptimizer):
 
         assert isinstance(
             optimizer, Adam
-        ), "Only Adam currently supported, due to checkpointing requirements."
+        ), "Only Adam currently supported, due to checkpointing requirements.{}".format(type(optimizer))
 
         # Model grad buffer ranges.
         assert per_model_buffers is not None, "per_model_buffers must be provided"
